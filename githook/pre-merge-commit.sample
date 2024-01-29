@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run PHPUnit
+php bin/phpunit
+
+# If PHPUnit fails, stop the commit
+if [ $? != 0 ]; then
+ echo "Tests must pass before commit!"
+ exit 1
+fi
